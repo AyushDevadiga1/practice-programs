@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    body { font-family: Arial; background: #eef; padding: 20px;}
+    .container {background: #fff; padding: 30px; border-radius: 8px; max-width: 340px;}
+    input {margin: 10px 0; padding: 10px; width: 95%;}
+    .message {color: red; margin-top: 10px;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Club Registration</h2>
+    <form id="clubForm">
+      <label>Name:</label><br>
+      <input type="text" id="name"><br>
+      <label>Age:</label><br>
+      <input type="number" id="age"><br>
+      <label>Email:</label><br>
+      <input type="text" id="email"><br>
+      <button type="submit">Register</button>
+    </form>
+    <div class="message" id="msg"></div>
+  </div>
+  <script>
+    document.getElementById('clubForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      var name = document.getElementById('name').value.trim();
+      var age = parseInt(document.getElementById('age').value.trim());
+      var email = document.getElementById('email').value.trim();
+      var msg = document.getElementById('msg');
+      msg.style.color = "red";
+
+      // Check if all fields are filled
+      if (!name || !age || !email) {
+        msg.innerText = "Please fill in all fields!";
+        return;
+      }
+      // Check if email looks right
+      if (!email.includes('@') || !email.includes('.')) {
+        msg.innerText = "Please enter a valid email address!";
+        return;
+      }
+      // Check if age is in range
+      if (age < 18 || age > 60) {
+        msg.innerText = "Age must be between 18 and 60!";
+        return;
+      }
+
+      msg.style.color = "green";
+      msg.innerText = "You are registered successfully!";
+    });
+  </script>
+</body>
+</html>
