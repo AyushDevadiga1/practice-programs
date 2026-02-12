@@ -156,3 +156,45 @@ print(f'_'*149)
 
 '''
 
+'''
+
+#                                                       Inner Classes
+
+class Laptop:
+
+    def __init__(self,name):
+        self.name = name
+    
+    class bill:
+
+        def __init__(self,price,warranty,date,owner):
+            self.price = price
+            self.warranty = warranty
+            self.date = date
+            self.owner = owner
+        
+        def warranty_check(self):
+            if self.warranty > 0:
+                print(f'Something can STILL be done !!! ')
+            else:
+                print(f'You are Cooked !!! , Warranty Expired')
+        
+    class accessories:
+
+        def __init__(self,given):
+            self.given = given
+
+        def __str__(self):
+            return self.given
+
+asus = Laptop('ASUS')
+
+asus_user_bill = asus.bill(50000,1,12/2/2006,'Dolph Ziggler')
+
+asus_accessories = asus.accessories(False)
+
+asus_user_bill.warranty_check()
+print(f'Accessories were : {'Given' if asus.accessories == True else 'Not Given'}')
+
+
+'''
