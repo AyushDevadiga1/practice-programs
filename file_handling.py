@@ -1,3 +1,5 @@
+'''
+
 file_path = 'dummy_text.txt'
 
 file_opened = open(file_path,'r')
@@ -18,12 +20,38 @@ print(data)
 
 print(f'_'*149)
 
+'''
+
+'''
+
 file_path = 'dummy_text.txt'
 
 file_opened = open(file_path,'r')
 
-print(file_opened.read())
+print(file_opened.read(5)) # We can pass a parameter here which is the no of characters to read.
 
-# Good Practice is to close close the Reader
+file_opened.close() # Good Practice is to close close the Reader
 
-file_opened.close()
+
+print(f'_'*149)
+
+file_path = 'dummy_text.txt'
+
+with open(file_path,'r') as f:
+    print(f.readline()) # Reads a Single line if para passed 
+
+file_opened.close() # Good Practice is to close close the Reader
+
+print(f'_'*149)
+
+file_path = 'dummy_text.txt'
+
+with open(file_path,'r') as f:
+    for x in f : # <-- This helps to loop each line
+        print(x)
+        print('-'*149)
+
+file_opened.close() # Good Practice is to close close the Reader
+
+'''
+
