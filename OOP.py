@@ -71,7 +71,7 @@ print(f'_'*149)
 '''
 
 '''
-
+#                                            Polymorphism
 # Polymorphism is simply One method exhibiting different behaviours in different situations
 # for example len(x) returns different integers depending on the datatype passed.
 
@@ -108,6 +108,51 @@ for x in (bird1,pidgeon1,sparrow1):
     print(x.color)
     x.fly()
 
+
+'''
+
+'''
+
+#                                           Encapsulation 
+class Human:
+    def __init__(self,name,species):
+        self.name = name 
+        self.__species = species # <---  This is a special private variable which cannot be accessed directly.
+    
+    def get_species(self):
+        print(f'Oh !!! You were a {self.__species}')
+    
+    def set_species(self,species):
+        # Also not to forget we can add logic here when we are setting new values and to be honest 
+        # we can completely make a new function to exclusively make species not while instantiation.
+
+        self.__species = species
+
+human1 = Human('Sand','Homo-Sapiens')
+
+print(human1.name)
+print(human1.__species)
+
+print(f'_'*149)
+
+# When we try to run this command we get this error : AttributeError: 'Human' object has no attribute '__species'
+# We need an exclusive function to access the variables and this function is called getter function.
+
+print(f'_'*149)
+
+# Now accessing the variables with a getter function
+human1.get_species()
+
+# Also you might have guessed that we need a function to update this value too @_@
+# Now changing the species using a setter
+
+human1.set_species('Homo-Erectus')
+
+# Now checking again
+
+human1.get_species()
+
+print(f'_'*149)
 
 '''
 
