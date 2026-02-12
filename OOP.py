@@ -70,4 +70,44 @@ print(f'_'*149)
 
 '''
 
+'''
+
+# Polymorphism is simply One method exhibiting different behaviours in different situations
+# for example len(x) returns different integers depending on the datatype passed.
+
+# This holds true for class methods also when we inherit different methods
+
+class Bird:
+    def __init__(self,name,color):
+        self.name = name
+        self.color = color
+
+    def fly(self):
+        print(f'{self.name} goes zooopppppp !!!')
+
+class Sparrow(Bird):
+    pass
+
+    def fly(self):
+        print(f'I am {self.name} and I go spushhhh')
+
+class Pidgeon(Bird):
+    def __init__(self, color, name='Pidgeon'):
+        super().__init__(name, color)
+
+    def fly(self):
+        print(f'{self.name} go fushhhhhh')
+
+
+bird1 = Bird('Crow','Black')
+pidgeon1 = Pidgeon('Grey')
+sparrow1 = Sparrow('Sparrow','Brown')
+
+for x in (bird1,pidgeon1,sparrow1):
+    print(x.name)
+    print(x.color)
+    x.fly()
+
+
+'''
 
