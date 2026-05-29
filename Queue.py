@@ -29,7 +29,7 @@ print(q3)
 
 #Using Queue (includes syntax errors@-@)
 import queue
-q4=queue.Queue
+q4=queue.Queue()
 q4.put(34)
 q4.put(54,block=True,timeout=None)
 print(q4.queue)
