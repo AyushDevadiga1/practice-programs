@@ -1,0 +1,3 @@
+2026-06-23 09:40:19,399 - INFO - Model training started
+2026-06-23 09:40:19,400 - WARNING - Feature 'tenure' has 5% missing values
+2026-06-23 09:40:19,401 - ERROR - Prediction failed for customer 1029
