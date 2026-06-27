@@ -4,3 +4,6 @@ class TreeNode:
         self.left = left
         self.right = right
         self.val = val
+
+if __name__ == "__main__":
+    print(" Dmoe code block ran , called the module as a standalone")
