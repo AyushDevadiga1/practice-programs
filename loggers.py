@@ -59,3 +59,46 @@ ROTATION USING NO : We explicily set the number of logs to keep ; for example ba
 ROTATION USING TIME :  We explitly set a date till which that log stays and then gets deleted.
 """
 
+# In practice : 
+""" 
+Always use logger.exception in the try and except block to trace the tree stack while logging for errors to record 
+LOG PARAMS : using logger.info 
+LOG METRICS : using logger.info 
+LOG VERSIONS : using logger.info 
+"""
+
+# Production practices
+
+"""
+                    Client
+                       │
+                       ▼
+               FastAPI / Flask
+                       │
+      ┌────────────────┼────────────────┐
+      ▼                ▼                ▼
+ Authentication   Preprocessing   Inference
+      │                │                │
+      ▼                ▼                ▼
+    Logger          Logger          Logger
+      └────────────────┼────────────────┘
+                       ▼
+                Log Collector
+                       ▼
+          Centralized Logging Platform
+
+"""
+
+""" 
+| Category    | Examples                                                    |
+| ----------- | ----------------------------------------------------------- |
+| Startup     | App version, environment, configuration (excluding secrets) |
+| Training    | Dataset version, hyperparameters, metrics, duration         |
+| Inference   | Request ID, model version, latency, outcome                 |
+| Warnings    | Missing features, fallback behavior                         |
+| Errors      | Exceptions with stack traces                                |
+| Security    | Authentication failures, authorization denials              |
+| Performance | CPU/GPU usage (if relevant), memory, response time          |
+| Audit       | Model deployment events, configuration changes              |
+
+"""
