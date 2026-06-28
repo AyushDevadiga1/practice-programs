@@ -1,0 +1,6 @@
+{"timestamp": "2026-06-28 14:22:31,980", "logger": "prediction_logger", "level": "INFO", "message": {"action": "model_initialized", "model_name": "LinearRegression", "metric": "mean_squared_error"}}
+{"timestamp": "2026-06-28 14:22:31,981", "logger": "prediction_logger", "level": "INFO", "message": {"action": "training_started", "model_name": "LinearRegression", "samples": 6, "features": 2}}
+{"timestamp": "2026-06-28 14:22:31,984", "logger": "prediction_logger", "level": "INFO", "message": {"action": "training_completed", "model_name": "LinearRegression", "status": "success"}}
+{"timestamp": "2026-06-28 14:22:31,986", "logger": "prediction_logger", "level": "INFO", "message": {"action": "prediction_started", "model_name": "LinearRegression", "predict_samples": 2}}
+{"timestamp": "2026-06-28 14:22:31,986", "logger": "prediction_logger", "level": "INFO", "message": {"action": "prediction_completed", "model_name": "LinearRegression"}}
+{"timestamp": "2026-06-28 14:22:31,989", "logger": "prediction_logger", "level": "INFO", "message": {"action": "evaluation_completed", "model_name": "LinearRegression", "metrics": {"mean_squared_error": 292.49}}}
